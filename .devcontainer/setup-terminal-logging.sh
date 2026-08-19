@@ -16,7 +16,7 @@ if [[ $- == *i* ]] && [[ -z "$LINUX_ASSESSMENT_TERMINAL_LOGGING" ]]; then
 
     LOG_FILE="$LOG_DIR/terminal-$(date +%Y%m%d-%H%M%S)-$$.log"
 
-    exec script -q -f "$LOG_FILE" bash
+    exec script -q -f "$LOG_FILE" bash --noprofile --norc
 fi
 
 BASHRC
