@@ -1,6 +1,23 @@
 {
-    "name": "Linux Assessment",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "remoteUser": "vscode",
-    "postCreateCommand": "bash .devcontainer/setup-terminal-logging.sh"
+  "name": "Linux Assessment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shellIntegration.enabled": false,
+        "terminal.integrated.profiles.linux": {
+          "Linux Assessment": {
+            "path": "/bin/bash",
+            "args": [
+              "-lc",
+              "exec bash /workspaces/linux-assessment/.devcontainer/start-terminal.sh"
+            ],
+            "overrideName": true
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "Linux Assessment"
+      }
+    }
+  }
 }
